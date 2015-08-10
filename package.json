@@ -1,0 +1,15 @@
+{
+  "name": "aproxy-crx",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/licg9999/aproxy-crx.git"
+  },
+  "author": "uno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/licg9999/aproxy-crx/issues"
+  },
+  "homepage": "https://github.com/licg9999/aproxy-crx#readme"
+}
