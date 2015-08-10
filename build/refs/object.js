@@ -1,0 +1,1 @@
+define(function(a,b,c){c.exports={create:function(a){return _.extend($("<div></div>"),a)}}});

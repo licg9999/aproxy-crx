@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         src: 'src',
         tar: 'build',
 
-        clean: ['<%=tar%>/**/*'],
+        clean: ['<%=tar%>/'],
 
         copy: {
             build: {
@@ -14,7 +14,8 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: '<%=src%>',
                     src: [
-                        'libs/**/*',
+                        'libs/**/*', 
+                        'imgs/**/*',
                         'manifest.json',
                         'popup.html'
                     ],
