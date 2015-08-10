@@ -1,1 +1,1 @@
-!function(a){a.config({base:"./refs/"}),a.use("initialize.js")}(seajs);
+define("main",function(a){a("pure.css")}),seajs.use("main");

@@ -1,0 +1,1 @@
+define("main",function(a){}),seajs.use("main");

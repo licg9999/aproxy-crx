@@ -1,1 +1,0 @@
-define(function(a){chrome.webRequest.onBeforeRequest.addListener(function(a){console.log(a,"request")},{urls:["http://*/*","https://*/*"]},["blocking"]),chrome.webRequest.onBeforeSendHeaders.addListener(function(a){console.log(a,"header")},{urls:["<all_urls>"]},["blocking","requestHeaders"])});

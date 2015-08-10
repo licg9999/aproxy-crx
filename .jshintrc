@@ -1,0 +1,11 @@
+{
+    "undef": true,
+    "browser": true,
+    "devel": true,
+    "globals": {
+        "$": true,
+        "define": true,
+        "seajs": true,
+        "_": true
+    }
+}

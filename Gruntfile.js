@@ -16,8 +16,9 @@ module.exports = function(grunt) {
                     src: [
                         'libs/**/*', 
                         'imgs/**/*',
+                        '**/*.html',
                         'manifest.json',
-                        'popup.html'
+                        '!bower_components/**/*'
                     ],
                     dest: '<%=tar%>'
                 }]
@@ -31,6 +32,7 @@ module.exports = function(grunt) {
                     cwd: '<%=src%>',
                     src: [
                         '**/*.css',
+                        '!libs/**/*',
                         '!bower_components/**/*'
                     ],
                     dest: '<%=tar%>'
@@ -45,6 +47,7 @@ module.exports = function(grunt) {
                     cwd: '<%=src%>',
                     src: [
                         '**/*.js',
+                        '!libs/**/*',
                         '!bower_components/**/*'
                     ],
                     dest: '<%=tar%>'
