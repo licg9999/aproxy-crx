@@ -1,1 +1,1 @@
-define(function(a,b,c){c.exports={create:function(a){return _.extend($("<div></div>"),a)}}});
+define(function(a,b,c){a("jquery"),a("underscore"),c.exports={create:function(a){return _.extend($("<div></div>"),a)}}});

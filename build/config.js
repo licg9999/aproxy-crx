@@ -1,1 +1,1 @@
-!function(a){a.config({base:"./refs/",alias:{"pure.css":"../libs/pure-min.css",jquery:"../libs/jquery.min.js",underscore:"../libs/underscore-min.js"}})}(seajs);
+!function(a){a.config({base:"./refs/",alias:{"pure.css":"../libs/pure-min.css",$:"../libs/jquery.min.js",_:"../libs/underscore-min.js",URI:"../libs/URI.min.js"}})}(seajs);

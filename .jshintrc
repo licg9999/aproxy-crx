@@ -4,8 +4,10 @@
     "devel": true,
     "globals": {
         "$": true,
+        "_": true,
+        "URI": true,
         "define": true,
         "seajs": true,
-        "_": true
+        "chrome": true
     }
 }
