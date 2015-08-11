@@ -1,6 +1,6 @@
 define(function(require, exports, module){
-    require('jquery');
-    require('underscore');
+    require('$');
+    require('_');
 
     module.exports = {
         create: function(props){

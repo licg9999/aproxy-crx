@@ -2,18 +2,30 @@
   "manifest_version": 2,
   "name": "aproxy-crx",
   "version": "1.0.0",
-  "browser_action": {
-    "default_icon": "./imgs/icon.png",
-    "default_popup": "./popup.html",
-    "default_title": "AproxyExtension"
+
+  "description": "",
+  "icons": {
+      "16": "./imgs/icon_16.png",
+      "48": "./imgs/icon_48.png",
+      "128": "./imgs/icon_128.png"
   },
+
+  "browser_action": {
+    "default_title": "AproxyExtension",
+    "default_popup": "./popup.html",
+    "default_icon": "./imgs/icon_128.png"
+  },
+
   "background": {
       "page": "./background.html"
   },
+
   "permissions": [
-      "background",
+      "alarms",
       "webRequest",
       "webRequestBlocking",
       "<all_urls>"
-  ]
+  ],
+
+  "author": "uno"
 }
