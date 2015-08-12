@@ -1,0 +1,10 @@
+h1, h2, h3{
+    color: #69c;
+}
+.pure-form input:focus{
+    border-color: #9cf;
+}
+.pure-button{
+    background-color: #69c;
+    color: #fff;
+}

@@ -1,1 +1,1 @@
-define("main",function(a){a("pure.css")}),seajs.use("main");
+define("main",function(a){a("pure.css"),a("font-awesome.css"),a("customize.css"),a("$"),a("_");var b=a("overlay"),c=a("itemUtil");$(".rules > .title > .add").on("click",function(){b.prompt({question:"规则名称",description:"例：小二平台"},function(a,b){if(null!==b){var d=c.addItem({name:b});c.editItem(d),c.checkEmpty()}})}),c.reloadItems(function(){c.checkEmpty()})}),seajs.use("main");

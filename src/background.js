@@ -16,9 +16,13 @@ var ProxyPrPts = {
     'http': '80',
     'https': '443'
 };
+var ProxyHosts = {
+    '127.0.0.1:9999': true
+};
 
 define('main', function(require) {
-    require('_'); require('URI');
+    require('_'); 
+    require('URI');
 
     var PROTPORTS = {
         'http': '80',

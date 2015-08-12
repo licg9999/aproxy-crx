@@ -27,5 +27,7 @@
       "<all_urls>"
   ],
 
+  "content_security_policy": "script-src 'unsafe-eval'; object-src 'self'",
+
   "author": "uno"
 }

@@ -2,6 +2,7 @@
     "undef": true,
     "browser": true,
     "devel": true,
+    "sub": true,
     "globals": {
         "$": true,
         "_": true,
