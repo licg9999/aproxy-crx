@@ -25,7 +25,7 @@ define(function(require, exports, module){
                     callback(null, data);
                 },
                 error: function(jqXHR, textStatus, errorThrown){
-                    callback(errorThrown);
+                    callback(textStatus);
                 }
             }));
         },

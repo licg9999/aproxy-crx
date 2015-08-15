@@ -60,7 +60,11 @@ body{
     position: absolute;
     left: -0.2em; top: 6px;
     color: #999;
+    cursor: -webkit-grab;
 }
+/*.rules > .wrap > .pair > .action > .move:active{
+    cursor: -webkit-grabbing;
+}*/
 
 .rules > .wrap > .pair.disabled{
     opacity: 0.6;

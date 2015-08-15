@@ -28,6 +28,16 @@
     margin-right: 10px;
 }
 
+
+.overlay.alert > .dialog > .tip{
+    padding-left: 10px;
+}
+.overlay.alert > .dialog > .tip > h2{
+    font-size: 1.2em;
+    margin: 0.6em 0;
+}
+
+
 .overlay.prompt > .dialog > .question{
     padding-left: 10px;
     border-bottom: 1px solid #eee;
@@ -46,10 +56,19 @@
     display: inline-block;
 }
 
-.overlay.alert > .dialog > .tip{
-    padding-left: 10px;
+
+.overlay.toast > .dialog{
+    top: 80px;
+    width: auto;
+    min-width: 160px;
+    height: auto;
 }
-.overlay.alert > .dialog > .tip > h2{
+.overlay.toast > .dialog > .tip{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.overlay.toast > .dialog > .tip > h2{
     font-size: 1.2em;
-    margin: 0.6em 0;
+    margin: 0.6em 0, 0.7em 0;
+    text-align: center;
 }

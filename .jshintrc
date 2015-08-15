@@ -3,6 +3,7 @@
     "browser": true,
     "devel": true,
     "sub": true,
+    "-W084": true,
     "globals": {
         "$": true,
         "_": true,

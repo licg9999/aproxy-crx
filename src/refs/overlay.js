@@ -6,6 +6,12 @@ define(function(require, exports, module) {
     var object = require('object');
 
     var tmpls = {
+        toast: '<div class="overlay toast">' + 
+            '   <div class="mask"></div>' + 
+            '   <div class="pure-g dialog">' + 
+            '       <div class="pure-u-1 tip"><h2><%=tip%></h2></div>' + 
+            '   </div>' + 
+            '</div>',
         alert: '<div class="overlay alert">' +
             '    <div class="mask"></div>' +
             '    <div class="pure-g dialog">' +
@@ -15,7 +21,6 @@ define(function(require, exports, module) {
             '        </div>' +
             '    </div>' +
             '</div>',
-        confirm: '', //TODO
         prompt: '<div class="overlay prompt">' +
             '    <div class="mask"></div>' +
             '    <div class="pure-g dialog">' +
@@ -36,6 +41,53 @@ define(function(require, exports, module) {
     });
 
     var overlay = object.create({
+        toast: function(args, callback){
+            args = _.extend({
+                tip: ''
+            }, args);
+            callback = callback || function() {};
+
+            var $elm = $(tmpls['toast'](args)).appendTo('body');
+
+            var $dialog = $elm.children('.dialog');
+            $dialog.css('margin-left', '-' + $dialog.width() / 2 + 'px');
+
+            _.delay(function(){
+                $elm.fadeOut({
+                    duration: 500,
+                    complete: function(){
+                        $elm.remove();
+                        callback(null);
+                    }
+                });
+            }, 500);
+
+            return $elm;
+        },
+
+        alert: function(args, callback) {
+            args = _.extend({
+                tip: ''
+            }, args);
+            callback = callback || function() {};
+
+            var $elm = $(tmpls['alert'](args)).appendTo('body');
+
+            _.extend($elm, {
+                ok: function(){
+                    var v = callback(null);
+                    if (v || _.isUndefined(v)) {
+                        $elm.remove();
+                    }
+                }
+            });
+            _.bindAll($elm, 'ok');
+
+            $elm.delegate('.ok', 'click', $elm.ok);
+
+            return $elm;
+        },
+
         prompt: function(args, callback) {
             args = _.extend({
                 question: '',
@@ -47,37 +99,28 @@ define(function(require, exports, module) {
 
             $elm.find('.answer input').focus();
 
-            $elm.delegate('.ok', 'click', function(e) {
-                var answer = $elm.find('.answer > input').val();
-                var v = callback(null, answer);
-                if (v || _.isUndefined(v)) {
-                    $elm.remove();
+            _.extend($elm, {
+                ok: function(){
+                    var answer = $elm.find('.answer > input').val();
+                    var v = callback(null, answer);
+                    if (v || _.isUndefined(v)) {
+                        $elm.remove();
+                    }
+                },
+                cancel: function(){
+                    var v = callback(null, null);
+                    if (v || _.isUndefined(v)) {
+                        $elm.remove();
+                    }
                 }
             });
+            _.bindAll($elm, 'ok', 'cancel');
 
-            $elm.delegate('.cancel', 'click', function(e) {
-                var v = callback(null, null);
-                if (v || _.isUndefined(v)) {
-                    $elm.remove();
-                }
-            });
+            $elm.delegate('.ok', 'click', $elm.ok)
+                .delegate('.cancel', 'click', $elm.cancel);
+
+            return $elm;
         },
-
-        alert: function(args, callback) {
-            args = _.extend({
-                tip: ''
-            }, args);
-            callback = callback || function() {};
-
-            var $elm = $(tmpls['alert'](args)).appendTo('body');
-
-            $elm.delegate('.ok', 'click', function(e) {
-                var v = callback(null);
-                if (v || _.isUndefined(v)) {
-                    $elm.remove();
-                }
-            });
-        }
     });
 
     module.exports = overlay;
