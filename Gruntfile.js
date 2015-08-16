@@ -41,6 +41,12 @@ module.exports = function(grunt) {
         },
 
         uglify: {
+            options: {
+                ASCIIOnly: true,
+                mangle: {
+                    except: ['require']
+                }
+            },
             build: {
                 files: [{
                     expand: true,
@@ -73,7 +79,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['copy', 'cssmin', 'uglify']);
+    grunt.registerTask('default', ['clean', 'copy', 'cssmin', 'uglify']);
 
     grunt.registerTask('debug', ['default', 'watch']);
 };

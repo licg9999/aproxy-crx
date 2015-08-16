@@ -1,1 +1,1 @@
-define(function(a,b,c){a("$"),a("_"),c.exports={create:function(a){var b=_.extend($("<div></div>"),a),c=_.functions(b);return c.unshift(b),_.bindAll.apply(_,c),_.isFunction(b.initialize)&&b.initialize(),b}}});
+define(function(require,a,b){require("$"),require("_"),b.exports={create:function(a){var b=_.extend($("<div></div>"),a),c=_.functions(b);return c.unshift(b),_.bindAll.apply(_,c),_.isFunction(b.initialize)&&b.initialize(),b}}});
