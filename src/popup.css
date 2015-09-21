@@ -1,7 +1,10 @@
 body{
     background-color: #fff;
-    width: 330px; min-height: 200px;
+    width: 30em; min-height: 200px;
     padding: 0 20px 10px 20px;
+    position: relative;
+    display: block;
+    font-size: 12px;
 }
 
 .rules > .title{
